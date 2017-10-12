@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue App</title>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="../vue.css">
+</head>
+<body>
+  <div id="app">
+    <div>Count: {{ this.count }}</div>
+    <button class="vue-btn" @click="increment">Increment</button>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        count: 0
+      },
+      methods: {
+        alertTime(heading) {
+          alert(`${heading}: ${new Date().toLocaleTimeString()}`);
+        },
+        increment() {
+          this.count++;
+        }
+      },
+      created() {
+        this.alertTime('Created');
+      },
+      mounted() {
+        this.alertTime('Mounted');
+      },
+      updated() {
+        this.alertTime('Updated');
+      }
+    })
+  </script>
+</body>
+</html>
