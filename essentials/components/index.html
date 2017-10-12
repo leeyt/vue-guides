@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue App</title>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="../vue.css">
+</head>
+<body>
+  <div id="app">
+    <counter></counter>
+  </div>
+  <script>
+    var counter = Vue.component('counter', {
+      template: `
+        <div>
+          <div>Count: {{ this.count }}</div>
+          <button class="vue-btn" @click="increment">Increment by 1</button>
+        </div>
+      `,
+      data() {
+        return {
+          count: 0
+        }
+      },
+      methods: {
+        increment() {
+          this.count++;
+        }
+      }
+    });
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+      },
+      components: {
+        counter
+      }
+    })
+  </script>
+</body>
+</html>
