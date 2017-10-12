@@ -5,7 +5,7 @@
   <!-- VueJS -->
   <script src="https://unpkg.com/vue"></script>
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/noteMaster.css">
 </head>
@@ -24,6 +24,17 @@
         </div>
       </div>
       <button class="btn btn-primary" @click="addNote">Submit</button>
+      <div class="col-sm-12">
+        <div class="col-sm-4 note" v-for="note in notes">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">{{ note.title }}</h4>
+              <h6 class="card-subtitle mb-2 text-muted">{{ note.date }}</h6>
+              <p class="card-text">{{ note.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <script>
