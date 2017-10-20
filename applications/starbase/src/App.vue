@@ -1,6 +1,11 @@
 <template>
 <div id="app">
   <h3>{{ title }}</h3>
+  <button 
+    class="btn btn-primary"
+    @click="fetchCharacter">
+    Test Fetch Character
+  </button>
 </div>
 </template>
 
@@ -10,6 +15,14 @@ export default {
   data() {
     return {
       title: 'Generate Your Team'
+    }
+  },
+  methods: {
+    fetchCharacter() {
+      const url = 
+      fetch('http://swapi.co/api/people/1', { method: 'GET' })
+        .then(response => response.json())
+        .then(json => console.log(json));
     }
   }
 }
