@@ -6,21 +6,21 @@
 
 <script>
 export default {
+  props: [ 'id' ],
   data() {
     return {
       character: {}
     }
   },
   methods: {
-    fetchCharacter() {
-      const url = 
-      fetch('http://swapi.co/api/people/1', { method: 'GET' })
+    fetchCharacter(id) {
+      fetch(`http://swapi.co/api/people/${id}`, { method: 'GET' })
         .then(response => response.json())
         .then(json => this.character = json);
     }
   },
   created() {
-    this.fetchCharacter();
+    this.fetchCharacter(this.id);
   }
 }
 </script>
