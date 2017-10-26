@@ -6,10 +6,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      type: this.$route.params.type
-    }
-  }
+  computed: {
+    type() {
+      return this.$route.params.type
+    } 
+  },
 }
 </script>
