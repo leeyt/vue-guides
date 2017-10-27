@@ -1,11 +1,19 @@
 <template>
-  <div class="">
-    {{items}}
+  <div class="row">
+    <Item 
+      v-for="(item, index) in items"
+      :key="index"
+      :item="item"></Item>
   </div>
 </template>
 
 <script>
+import Item from './Item.vue';
+
 export default {
+  components: {
+    Item
+  },
   data() {
     return {
       items: []
