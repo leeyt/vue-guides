@@ -3,6 +3,7 @@
     <Item 
       v-for="(item, index) in items"
       :key="index"
+      :type="type"
       :item="item"></Item>
   </div>
 </template>
