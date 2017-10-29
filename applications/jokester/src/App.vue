@@ -14,10 +14,23 @@
       Add a Joke
     </button>
     <br>
+    <span 
+      v-for="type in types"
+      :key="type"
+    >
+      <input 
+        type="checkbox"
+        :value="type" 
+        v-model="checkedTypes"
+        checked
+      >
+      <label>{{type}}</label>&nbsp;
+    </span>
     <br>
     <div class="row">
       <Joke
         v-for="(joke, index) in $store.state.jokes"
+        v-show="checkedTypes.includes(joke.type)"
         :key="index"
         :index="index"
         :joke="joke"
@@ -31,6 +44,12 @@ import { mapActions } from 'vuex'
 import Joke from './components/Joke.vue'
 
 export default {
+  data() {
+    return {
+      types: [ 'general', 'knock-knock', 'programming' ],
+      checkedTypes: [ 'general', 'knock-knock', 'programming' ]
+    }
+  },
   methods: mapActions([
     'initJokes',
     'addJoke'
