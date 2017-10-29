@@ -7,6 +7,9 @@
     >
       Sign Out
     </button>
+    <hr>
+    <AddEvent />
+    <hr>
 
     {{$store.state}}
   </div>
@@ -14,6 +17,7 @@
 
 <script>
 import { firebaseApp } from '../firebaseApp'
+import AddEvent from './AddEvent.vue'
 
 export default {
   methods: {
@@ -21,6 +25,9 @@ export default {
       this.$store.dispatch('signOut')
       firebaseApp.auth().signOut()
     }
+  },
+  components: {
+    AddEvent
   }
 }
 </script>
