@@ -1,7 +1,14 @@
 <template>
   <div class="">
-    <h4>Add an Event</h4>
-    <div class="form">
+    <h4>
+      Add an Event 
+      <input 
+        class="form-check-input"
+        type="checkbox"
+        v-model="showForm"
+      >
+    </h4>
+    <div class="form" v-show="showForm">
       <div class="form-group">
         <label>Title</label>
         <input type="text" class="form-control" v-model="event.title">
@@ -40,7 +47,8 @@ export default {
         date: '',
         location: '',
         email: ''
-      }
+      },
+      showForm: true
     }
   },
   methods: {
