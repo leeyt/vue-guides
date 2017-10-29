@@ -18,8 +18,9 @@
     <div class="row">
       <Joke
         v-for="(joke, index) in $store.state.jokes"
-        :joke="joke"
         :key="index"
+        :index="index"
+        :joke="joke"
       />
     </div>
   </div>
