@@ -8,6 +8,7 @@ Vue.use(VueRouter)
 
 import Dashboard from './components/Dashboard.vue'
 import Signin from './components/Signin.vue'
+import Signup from './components/Signup.vue'
 
 const routes = [
   {
@@ -17,6 +18,10 @@ const routes = [
   {
     path: '/signin',
     component: Signin
+  },
+  {
+    path: '/signup',
+    component: Signup
   }
 ]
 
