@@ -7,18 +7,28 @@
     >
       Add Ten Random Jokes
     </button>
-    <div class="">
-      {{$store.state}}
+    <br>
+    <br>
+    <div class="row">
+      <Joke
+        v-for="(joke, index) in $store.state.jokes"
+        :joke="joke"
+        :key="index"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
+import Joke from './components/Joke.vue'
 
 export default {
   methods: mapActions([
     'initJokes'
-  ])
+  ]),
+  components: {
+    Joke
+  }
 }
 </script>
